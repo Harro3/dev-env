@@ -77,6 +77,7 @@ alias la='exa -al --color=always --group-directories-first --icons'
 alias ll='exa -l --color=always --group-directories-first --icons'
 alias ls='exa --icons'
 alias vim='nvim'
+alias cs="vim ~/.cheatsheet.md"
 
 # Shell integrations
 eval "$(fzf --zsh)"

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-yay -S gvim discord spotify nvim interception-tools interception-caps2esc stow kitty ttf-fira-code ttf-nerd-fonts-symbols
+yay -S gvim discord spotify nvim interception-tools interception-caps2esc stow kitty ttf-fira-code ttf-nerd-fonts-symbols yazi
 
 echo "Setting up udevmon for escape / capslock binding"
 

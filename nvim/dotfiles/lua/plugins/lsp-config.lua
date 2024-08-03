@@ -4,34 +4,37 @@ return {
     config = function()
       require("mason").setup()
     end,
-  }, {
-  "williamboman/mason-lspconfig.nvim",
-  config = function()
-    require("mason-lspconfig").setup({
-      ensure_installed = {
-        "lua_ls",
-        "tsserver",
-        "clangd",
-        "jdtls",
-        "dockerls",
-        "docker_compose_language_service",
-        "jsonls",
-        "cssls",
-        "html",
-        "lemminx",
-        "pylsp",
-        "yamlls",
-      },
-    })
-  end,
-},
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "lua_ls",
+          "tsserver",
+          "clangd",
+          "jdtls",
+          "dockerls",
+          "docker_compose_language_service",
+          "jsonls",
+          "cssls",
+          "html",
+          "lemminx",
+          "pylsp",
+          "yamlls",
+          "texlab",  -- LaTeX language server
+          "markdownlint", -- Markdown linter
+          "marksman", -- Markdown language server
+        },
+      })
+    end,
+  },
 
   {
     "neovim/nvim-lspconfig",
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
-
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
       })
@@ -59,9 +62,30 @@ return {
       lspconfig.pylsp.setup({ capabilities = capabilities })
       lspconfig.yamlls.setup({ capabilities = capabilities })
 
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+      lspconfig.texlab.setup({
+        capabilities = capabilities,
+        settings = {
+          texlab = {
+            build = {
+              onSave = true,
+            },
+            forwardSearch = {
+              executable = "zathura",
+              args = { "--synctex-forward", "%l:1:%f", "%p" },
+            },
+            chktex = {
+              onEdit = true,
+              onOpenAndSave = true,
+            },
+          },
+        },
+      })
+      lspconfig.marksman.setup({ capabilities = capabilities })
+      lspconfig.markdownlint.setup({ capabilities = capabilities })
+
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show info" })
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
+      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
       vim.keymap.set("n", "<leader>e", function()
         vim.diagnostic.open_float(0, { scope = "line" })
       end)
