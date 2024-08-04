@@ -6,6 +6,15 @@ return {
     end,
   },
   {
+    "lervag/vimtex",
+    lazy = false, -- we don't want to lazy load VimTeX
+    -- tag = "v2.15", -- uncomment to pin to a specific release
+    init = function()
+      -- VimTeX configuration goes here, e.g.
+      vim.g.vimtex_view_method = "zathura"
+    end,
+  },
+  {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
@@ -22,8 +31,7 @@ return {
           "lemminx",
           "pylsp",
           "yamlls",
-          "texlab",  -- LaTeX language server
-          "markdownlint", -- Markdown linter
+          "texlab", -- LaTeX language server
           "marksman", -- Markdown language server
         },
       })
@@ -81,7 +89,6 @@ return {
         },
       })
       lspconfig.marksman.setup({ capabilities = capabilities })
-      lspconfig.markdownlint.setup({ capabilities = capabilities })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show info" })
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
