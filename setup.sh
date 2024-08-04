@@ -1,6 +1,8 @@
 #!/bin/sh
 
-yay -S gvim discord spotify nvim interception-tools interception-caps2esc stow kitty ttf-fira-code ttf-nerd-fonts-symbols yazi
+set -e
+
+./install-deps.sh
 
 echo "Setting up udevmon for escape / capslock binding"
 
@@ -16,8 +18,13 @@ echo '
 sudo systemctl enable udevmon
 sudo systemctl start udevmon
 
-cd utils
+echo "Setting up docker perms"
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+sudo systemctl enable docker
 
-stow dotfiles -t ~
-mkdir -p ~/.local/bin
-stow bin -t ~/.local/bin
+echo "Setting up zsh as default shell"
+chsh -s $(which zsh)
+
+./stow-all.sh
