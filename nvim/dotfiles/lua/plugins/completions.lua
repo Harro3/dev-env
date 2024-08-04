@@ -12,6 +12,9 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
     },
+    config = function()
+      require("luasnip").config.setup({ enable_autosnippets = true })
+    end,
   },
   {
     "hrsh7th/nvim-cmp",
