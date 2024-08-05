@@ -635,3 +635,4 @@ bindsym $mod+d exec sh $HOME/.config/rofi/bin/launcher
 bindsym $mod+r exec sh $HOME/.config/rofi/bin/runner
 bindsym $mod+p exec sh $HOME/.config/rofi/bin/powermenu
 bindsym $mod+s exec sh $HOME/.config/rofi/bin/screenshot
+bindsym $mod+m exec sh $HOME/.config/rofi/bin/rofiemoji

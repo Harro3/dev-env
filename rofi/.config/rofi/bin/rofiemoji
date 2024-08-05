@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+rofi \
+  -modi 'run,drun,emoji:~/.config/rofi/rofiemoji/rofiemoji.sh' \
+  -theme "$HOME"/.config/rofi/config/rofiemoji.rasi \
+  -show emoji
