@@ -176,7 +176,7 @@ bindsym $mod+Return exec --no-startup-id kitty
 bindsym $mod+q kill
 
 # exit-menu
-bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu
+# bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu
 
 # Lock the system
 # lock with a picture:
@@ -237,7 +237,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+g layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -282,7 +282,7 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Redirect sound to headphones
-bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
+# bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 # bindsym $mod+w exec --no-startup-id /usr/bin/firefox
@@ -290,7 +290,7 @@ bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 # bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
 # Power Profiles menu switcher (rofi)
-bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
+# bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
 
 ##########################################
 # configuration for workspace behaviour: #
@@ -355,10 +355,10 @@ for_window [class=Spotify] focus
 # For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
 # install picom package (yay -S picom)
 # start using default config 
-#exec_always --no-startup-id picom -b
+# exec_always --no-startup-id picom -b
 #
 # for custom config:
-exec_always --no-startup-id picom --config  ~/.config/picom/picom.conf
+# exec_always --no-startup-id picom --config  ~/.config/picom/picom.conf
 
 #############################################
 # autostart applications/services on login: #
@@ -568,16 +568,16 @@ strip_workspace_numbers yes
 
 ## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
 
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
-		-config ~/.config/rofi/rofidmenu.rasi
+# bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
+		# -config ~/.config/rofi/rofidmenu.rasi
 
 #bindsym F9 exec --no-startup-id rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
 ## rofi bindings for window menu ($mod+t /F10 optional disabled)
 
-bindsym $mod+t exec --no-startup-id rofi -show window \
-		-config ~/.config/rofi/rofidmenu.rasi
+# bindsym $mod+t exec --no-startup-id rofi -show window \
+		# -config ~/.config/rofi/rofidmenu.rasi
 
 #bindsym F10 exec --no-startup-id rofi -show window \
 #		-config ~/.config/rofi/rofidmenu.rasi
@@ -629,3 +629,9 @@ client.background        $base
 
 # Screenshot shortcut
 bindsym $mod+Shift+S exec flameshot gui
+
+# Rofi config
+bindsym $mod+d exec sh $HOME/.config/rofi/bin/launcher
+bindsym $mod+r exec sh $HOME/.config/rofi/bin/runner
+bindsym $mod+p exec sh $HOME/.config/rofi/bin/powermenu
+bindsym $mod+s exec sh $HOME/.config/rofi/bin/screenshot
