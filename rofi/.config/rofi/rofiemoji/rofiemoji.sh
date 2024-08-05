@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VER='13.1'
+VER='15.1'
 URL="https://www.unicode.org/Public/emoji/${VER}/emoji-test.txt"
 DIR="$HOME/.cache"
 FILE="$DIR/emojis.txt"
