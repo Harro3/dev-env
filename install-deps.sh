@@ -46,6 +46,7 @@ add latex-mk              # Yet another latex compiler
 add picom                 # Window compositor
 add flameshot             # Screenshot tool
 add autotiling            # Automatic tiling script for i3
+add autorandr             # Screen layouts manager
 
 # Zsh tools
 

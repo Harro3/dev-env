@@ -89,12 +89,12 @@ return {
         },
       })
       -- Configure markdown to also use texlab
-      lspconfig.markdown.setup({
-        capabilities = capabilities,
-        on_attach = function(client, bufnr)
-          -- Add additional key mappings or settings specific to markdown + LaTeX here
-        end,
-      })
+      -- lspconfig.markdown.setup({
+      --   capabilities = capabilities,
+      --   on_attach = function(client, bufnr)
+      --     -- Add additional key mappings or settings specific to markdown + LaTeX here
+      --   end,
+      -- })
       lspconfig.marksman.setup({ capabilities = capabilities })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show info" })
