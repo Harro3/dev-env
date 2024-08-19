@@ -197,11 +197,8 @@ bindsym F1 exec --no-startup-id ~/.config/i3/scripts/keyhint-2
 # bindsym $mod+F1 exec --no-startup-id xed ~/.config/i3/keybindings
 
 # Backlight control
-#bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
-#bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
-# Backlight setting using dunst osc
-bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_up
-bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_down
+bindsym XF86MonBrightnessDown exec --no-startup-id notify-send -i t --hint=int:value:$(($(brightnessctl | grep -Po '\d+%' | sed s/%//g) - 5)) --hint=string:x-dunst-stack-tag:brightness --hint=string:hlcolor:"#7f7fff" "  $(brightnessctl -c backlight set 5%- | grep -Po '\d+%')"
+bindsym XF86MonBrightnessUp exec --no-startup-id notify-send -i t --hint=int:value:$(($(brightnessctl | grep -Po '\d+%' | sed s/%//g) + 5)) --hint=string:x-dunst-stack-tag:brightness --hint=string:hlcolor:"#7f7fff" "  $(brightnessctl -c backlight set +5% | grep -Po '\d+%')"
 
 # change focus
 bindsym $mod+h focus left
@@ -390,7 +387,7 @@ exec --no-startup-id numlockx on
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
 # exec --no-startup-id ~/.screenlayout/monitor.sh
-autorandr -c
+# autorandr -c
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore

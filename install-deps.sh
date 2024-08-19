@@ -47,6 +47,7 @@ add picom                 # Window compositor
 add flameshot             # Screenshot tool
 add autotiling            # Automatic tiling script for i3
 add autorandr             # Screen layouts manager
+add brightnessctl         # brightness control
 
 # Zsh tools
 
