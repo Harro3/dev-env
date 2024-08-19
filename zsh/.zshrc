@@ -103,3 +103,9 @@ PATH="/opt/cuda/bin:$PATH"
 
 # Cargo
 PATH="$HOME/.cargo/bin:$PATH"
+
+# Better pkill
+pkill ()
+{
+    ps aux | fzf --height 40% --layout=reverse --prompt="Select process to kill: " | awk '{print $2}' | xargs -r sudo kill
+}
