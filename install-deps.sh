@@ -11,6 +11,7 @@ add() {
 add gvim                  # Basic text editor
 add discord               # Online messaging
 add spotify               # Music player
+add firefox               # Web browser
 add neovim                # Text editor
 add stow                  # Dotfiles management
 add kitty                 # Terminal emulator
@@ -48,6 +49,8 @@ add zathura               # File viewer
 add zathura-pdf-poppler   # Pdf plugin for zathura
 
 # Development tools
+add rust                  # Rust programming language
+add python                # python programming language
 add docker                # Container management
 add docker-compose        # docker comtainer orchestrator
 add npm                   # Node package manager
@@ -93,6 +96,8 @@ add ltex-ls-bin           # Latex language server
 add markdownlint          # Markdown linter
 add marksman              # Markdown formatter
 
+# Misc
+
 add gvfs
 add gvfs-afc
 add gvfs-gphoto2
@@ -106,6 +111,13 @@ add xdg-user-dirs-gtk
 add xed
 add xorg-xbacklight
 add xorg-xdpyinfo
+add networkmanager
+add networkmanager-openconnect
+add networkmanager-openvpn
+add noto-fonts
+add noto-fonts-emoji
+add pipewire-alsa
+add pipewire-jack
 
 yay -S $packages
 
