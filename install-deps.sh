@@ -22,6 +22,22 @@ add tmux                  # Terminal multiplexer
 
 # System tools
 
+add acpi                  # kernel module
+add scrot                 # screenshot utility
+add sysstat               # Monitoring tools
+add tumbler               # Thumbnail service
+add unzip                 # Zip archive manager
+add zip
+add xarchiver             # Archiver for X
+add xbindkeys             # Key binding utility for X
+add mpv                   # Media player
+add network-manager-applet # Networks Manager
+add numlockx
+add jq                    # CLI json processor
+add xrandr                # monitor manager
+add arandr                # monitor manager UI
+add awesome-terminal-fonts # Fonts
+add dex                   # Desktop entry files generator
 add lightdm               # Display manager
 add lightdm-slick-greeter # Slick looking greeter for lightdm
 add interception-tools    # Used to intercept interrupts
@@ -46,6 +62,13 @@ add latex-mk              # Yet another latex compiler
 # I3 tools
 
 add i3-wm                 # Window manager
+add i3blocks
+add i3lock
+add i3status
+add rofi                  # App selection menu
+add dunst                 # Notification manager
+add feh                   # Image manager
+add galculator            # Calculator app
 add picom                 # Window compositor
 add flameshot             # Screenshot tool
 add autotiling            # Automatic tiling script for i3
@@ -69,6 +92,20 @@ add xsel                  # System clipboard support
 add ltex-ls-bin           # Latex language server
 add markdownlint          # Markdown linter
 add marksman              # Markdown formatter
+
+add gvfs
+add gvfs-afc
+add gvfs-gphoto2
+add gvfs-mtp
+add gvfs-nfs
+add gvfs-smb
+add nwg-look
+add playerctl
+add polkit-gnome
+add xdg-user-dirs-gtk
+add xed
+add xorg-xbacklight
+add xorg-xdpyinfo
 
 yay -S $packages
 
