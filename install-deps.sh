@@ -22,6 +22,8 @@ add tmux                  # Terminal multiplexer
 
 # System tools
 
+add lightdm               # Display manager
+add lightdm-slick-greeter # Slick looking greeter for lightdm
 add interception-tools    # Used to intercept interrupts
 add interception-caps2esc # Binds capslock to escape
 add ttf-fira-code         # Code font 
@@ -43,6 +45,7 @@ add latex-mk              # Yet another latex compiler
 
 # I3 tools
 
+add i3-wm                 # Window manager
 add picom                 # Window compositor
 add flameshot             # Screenshot tool
 add autotiling            # Automatic tiling script for i3
