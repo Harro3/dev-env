@@ -47,6 +47,7 @@ add ttf-fira-code         # Code font
 add ttf-nerd-fonts-symbols # Icons and symbols
 add zathura               # File viewer
 add zathura-pdf-poppler   # Pdf plugin for zathura
+add xclip
 
 # Development tools
 add rust                  # Rust programming language
@@ -98,17 +99,7 @@ add marksman              # Markdown formatter
 
 # Misc
 
-add gvfs
-add gvfs-afc
-add gvfs-gphoto2
-add gvfs-mtp
-add gvfs-nfs
-add gvfs-smb
-add nwg-look
-add playerctl
 add polkit-gnome
-add xdg-user-dirs-gtk
-add xed
 add xorg-xbacklight
 add xorg-xdpyinfo
 add networkmanager
