@@ -35,7 +35,6 @@ add mpv                   # Media player
 add network-manager-applet # Networks Manager
 add numlockx
 add jq                    # CLI json processor
-add xrandr                # monitor manager
 add arandr                # monitor manager UI
 add awesome-terminal-fonts # Fonts
 add dex                   # Desktop entry files generator
