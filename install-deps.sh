@@ -20,6 +20,7 @@ add lazygit               # Git TUI
 add tree                  # Display files as tree
 add zsh                   # Z shell
 add tmux                  # Terminal multiplexer
+add openvpn               # Virtual private server implementation
 
 # System tools
 
