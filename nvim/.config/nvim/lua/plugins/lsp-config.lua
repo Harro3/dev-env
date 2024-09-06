@@ -19,6 +19,8 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
+					"cmake",
+					"bashls",
 					"lua_ls",
 					"tsserver",
 					"clangd",
@@ -71,6 +73,8 @@ return {
 			lspconfig.lemminx.setup({ capabilities = capabilities })
 			lspconfig.pylsp.setup({ capabilities = capabilities })
 			lspconfig.yamlls.setup({ capabilities = capabilities })
+			lspconfig.bashls.setup({ capabilities = capabilities })
+			lspconfig.cmake.setup({ capabilities = capabilities })
 
 			lspconfig.texlab.setup({
 				capabilities = capabilities,

@@ -12,6 +12,7 @@ add gvim                  # Basic text editor
 add discord               # Online messaging
 add spotify               # Music player
 add firefox               # Web browser
+add zen-browser-bin       # Web browser
 add neovim                # Text editor
 add stow                  # Dotfiles management
 add kitty                 # Terminal emulator
@@ -96,6 +97,7 @@ add xsel                  # System clipboard support
 add ltex-ls-bin           # Latex language server
 add markdownlint          # Markdown linter
 add marksman              # Markdown formatter
+add shellcheck-bin        # shell language checker
 
 # Misc
 
