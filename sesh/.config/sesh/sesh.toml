@@ -1,0 +1,11 @@
+[default_session]
+startup_command = 'nvim'
+
+[[session]]
+name='Downloads ⬇️' 
+path='~/Downloads'
+startup_command='ls'
+
+[[session]]
+name='Nvim config ⚙️'
+path='~/.config/nvim/'
