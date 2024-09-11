@@ -1,3 +1,3 @@
 #!/bin/sh
 
-stow i3 kitty misc nvim picom tmux zsh
+stow i3 kitty misc nvim picom tmux zsh sesh
