@@ -61,6 +61,7 @@ add jre17-openjdk         # Java development kit 17
 add clang                 # C language
 add texlab                # Latex compiler
 add texlive               # Live latex compiler
+add python-pylatexenc
 add texlive-langfrench    # French language support for texlive
 add pandoc                # Document conversion tool
 add latex-mk              # Yet another latex compiler
