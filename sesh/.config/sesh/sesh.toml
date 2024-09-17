@@ -9,3 +9,7 @@ startup_command='ls'
 [[session]]
 name='Nvim config ⚙️'
 path='~/.config/nvim/'
+
+[[session]]
+name="Harro docs 📁"
+path='~/Harro-docs/'
