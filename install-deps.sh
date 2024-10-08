@@ -118,5 +118,6 @@ yay -S $packages
 
 # Misc installations
 sudo npm install -g tree-sitter-cli   # Used for tree-sitter latex parser
+sudo npm install -g @vue/typescript-plugin # Vue ts_ls plugin
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # Tmux plugin manager
 

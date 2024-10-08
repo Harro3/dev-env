@@ -22,9 +22,9 @@ return {
                     "cmake",
                     "bashls",
                     "lua_ls",
-                    "tsserver",
                     "clangd",
                     "jdtls",
+                    "ts_ls",
                     "dockerls",
                     "docker_compose_language_service",
                     "jsonls",
@@ -35,6 +35,7 @@ return {
                     "yamlls",
                     "marksman",
                     "texlab", -- LaTeX language server
+                    "volar",
                 },
             })
         end,
@@ -45,13 +46,6 @@ return {
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.tsserver.setup({ capabilities = capabilities })
-            lspconfig.clangd.setup({
-                capabilities = capabilities,
-            })
             lspconfig.jdtls.setup({
                 capabilities = capabilities,
                 cmd = {
@@ -65,18 +59,21 @@ return {
                 },
             })
 
-            lspconfig.dockerls.setup({ capabilities = capabilities })
-            lspconfig.docker_compose_language_service.setup({ capabilities = capabilities })
-            lspconfig.jsonls.setup({ capabilities = capabilities })
-            lspconfig.cssls.setup({ capabilities = capabilities })
-            lspconfig.html.setup({ capabilities = capabilities })
-            lspconfig.lemminx.setup({ capabilities = capabilities })
-            lspconfig.pylsp.setup({ capabilities = capabilities })
-            lspconfig.yamlls.setup({ capabilities = capabilities })
-            lspconfig.bashls.setup({ capabilities = capabilities })
-            lspconfig.cmake.setup({ capabilities = capabilities })
-            lspconfig.marksman.setup({ capabilities = capabilities })
+            require("mason-lspconfig").setup_handlers({
+                -- Will be called for each installed server that doesn't have
+                -- a dedicated handler.
+                --
+                function(server_name) -- default handler (optional)
+                    -- https://github.com/neovim/nvim-lspconfig/pull/3232
+                    -- if server_name == "tsserver" then
+                    --     server_name = "ts_ls"
+                    -- end
+                    require("lspconfig")[server_name].setup({
 
+                        capabilities = capabilities,
+                    })
+                end,
+            })
             lspconfig.texlab.setup({
                 capabilities = capabilities,
                 settings = {
@@ -95,6 +92,26 @@ return {
                     },
                 },
             })
+
+            -- Changer le `location` si jamais ça marche pas
+            lspconfig.ts_ls.setup({
+                capabilities = capabilities,
+                init_options = {
+                    plugins = {
+                        {
+                            name = "@vue/typescript-plugin",
+                            location = "/usr/lib/@vue/typescript-plugin",
+                            languages = { "javascript", "typescript", "vue" },
+                        },
+                    },
+                },
+                filetypes = {
+                    "javascript",
+                    "typescript",
+                    "vue",
+                },
+            })
+
             -- Configure markdown to also use texlab
             -- lspconfig.markdown.setup({
             --   capabilities = capabilities,
