@@ -57,6 +57,8 @@ add python                # python programming language
 add docker                # Container management
 add docker-compose        # docker comtainer orchestrator
 add npm                   # Node package manager
+add opam                  # Ocaml package manager
+add python-pynvim
 add jre17-openjdk         # Java development kit 17
 add clang                 # C language
 add texlab                # Latex compiler
@@ -120,4 +122,5 @@ yay -S $packages
 sudo npm install -g tree-sitter-cli   # Used for tree-sitter latex parser
 sudo npm install -g @vue/typescript-plugin # Vue ts_ls plugin
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # Tmux plugin manager
+opam init
 
