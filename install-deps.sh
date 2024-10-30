@@ -58,6 +58,7 @@ add docker                # Container management
 add docker-compose        # docker comtainer orchestrator
 add npm                   # Node package manager
 add opam                  # Ocaml package manager
+add coq
 add python-pynvim
 add jre17-openjdk         # Java development kit 17
 add clang                 # C language
